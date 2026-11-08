@@ -14,20 +14,64 @@
 </head>
 <body>
     <header>
-        Teste Header
+        <button id="menu-toggle" aria-label="Abrir ou fechar menu">
+            <img src="img/menu-icon.svg" alt="" width="40" height="40"/>
+        </button>
     </header>
 
-    <nav>
-        Teste sidebar
-    </nav>
+    <aside>
+        <a href="/">Mesa</a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="img/dashboard-icon.svg" alt="" width="20" height="20">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/store-icon.svg" alt="" width="20" height="20">
+                        <span>Restaurantes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/employees-icon.svg" alt="" width="20" height="20">
+                        <span>Funcionários</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/utensils-icon.svg" alt="" width="20" height="20">
+                        <span>Cardápio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/grid-icon.svg" alt="" width="20" height="20">
+                        <span>Mesas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/receipt-text-icon.svg" alt="" width="20" height="20">
+                        <span>Atendimentos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/folder-open-icon.svg" alt="" width="20" height="20">
+                        <span>Cadastros</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-    <main role="main">
+    <main>
         @RenderBody()
     </main>
-
-    <footer>
-       Teste Footer
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
