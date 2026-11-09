@@ -15,7 +15,7 @@
 <body>
     <header>
         <button id="menu-toggle" aria-label="Abrir ou fechar menu">
-            <img src="img/menu-icon.svg" alt="" width="40" height="40"/>
+            <img src="~/img/menu-icon.svg" alt="" width="40" height="40"/>
         </button>
     </header>
 
@@ -25,47 +25,47 @@
             <ul>
                 <li>
                     <a href="">
-                        <img src="img/dashboard-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/dashboard-icon.svg" alt="" width="20" height="20">
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/store-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/store-icon.svg" alt="" width="20" height="20">
                         <span>Restaurantes</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/employees-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/employees-icon.svg" alt="" width="20" height="20">
                         <span>Funcionários</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/utensils-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/utensils-icon.svg" alt="" width="20" height="20">
                         <span>Cardápio</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/grid-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/grid-icon.svg" alt="" width="20" height="20">
                         <span>Mesas</span>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/receipt-text-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/receipt-text-icon.svg" alt="" width="20" height="20">
                         <span>Atendimentos</span>
                     </a>
                 </li>
                 <li>
                     <a href="" id="submenu-toggle" data-bs-toggle="collapse" data-bs-target="#submenu-cadastros" aria-expanded="false" aria-controls="submenu-cadastros">
-                        <img src="img/folder-open-icon.svg" alt="" width="20" height="20">
+                        <img src="~/img/folder-open-icon.svg" alt="" width="20" height="20">
                         <span>Cadastros</span>
                     </a>
                     <ul id="submenu-cadastros" class="collapse">
-                        <li><a href="">Formas de Pagamento</a></li>
+                        <li><a asp-controller="FormaPagamento" asp-action="Index">Formas de Pagamento</a></li>
                         <li><a href="">Tipos de Restaurante</a></li>
                         <li><a href="">Tipos de Funcionário</a></li>
                         <li><a href="">Grupos do Cardápio</a></li>

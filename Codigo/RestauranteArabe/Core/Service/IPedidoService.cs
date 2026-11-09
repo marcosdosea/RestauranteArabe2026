@@ -4,13 +4,13 @@ namespace Core.Service
 {
     public interface IPedidoService
     {
-        int Create(Pedido pedido);
+        uint Create(Pedido pedido);
         void Update(Pedido pedido);
-        void Delete(int id);
-        Pedido Get(int id);
+        void Delete(uint id);
+        Pedido Get(uint id);
         IEnumerable<Pedido> GetAll();
-        IEnumerable<Pedido> GetByAtendimento(int idAtendimento);
+        IEnumerable<Pedido> GetByAtendimento(uint idAtendimento);
         IEnumerable<Pedido> GetByStatus(string status);
-        bool AtendimentoPodeReceberPedidos(int idAtendimento);
+        bool AtendimentoPodeReceberPedidos(uint idAtendimento);
     }
 }
