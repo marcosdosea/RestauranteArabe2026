@@ -139,3 +139,197 @@ body {
     --color-neutral-white: #FFFFFF;
 }
 
+/* ============ Páginas de Cadastro ============ */
+
+main {
+    padding: var(--space-32);
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-16);
+    margin-bottom: var(--space-32);
+}
+
+.page-header h1 {
+    font-size: var(--font-size-28);
+    color: var(--color-neutral-charcoal-900);
+}
+
+.page-subtitle {
+    margin-top: var(--space-4);
+    font-size: var(--font-size-14);
+    color: var(--color-neutral-coffee-500);
+}
+
+/* ====== Botões ====== */
+
+.btn {
+    display: inline-block;
+    padding: var(--space-12) var(--space-24);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: var(--font-size-14);
+    font-weight: var(--weight-semibold);
+    text-align: center;
+    transition: .3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--color-brand-wine);
+    color: var(--color-neutral-sand-50);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-brand-wine-light);
+}
+
+.btn-secondary {
+    border-color: var(--color-neutral-coffee-400);
+    color: var(--color-neutral-coffee-600);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-neutral-sand-200);
+}
+
+.btn-danger {
+    background-color: var(--color-brand-terracotta);
+    color: var(--color-neutral-sand-50);
+}
+
+.btn-danger:hover {
+    background-color: var(--color-brand-terracotta-light);
+}
+
+/* ====== Tabela de dados ====== */
+
+.table-responsive {
+    overflow-x: auto;
+    background-color: var(--color-neutral-white);
+    border: 1px solid var(--color-neutral-sand-300);
+    border-radius: 6px;
+}
+
+.table-data {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-14);
+}
+
+.table-data th,
+.table-data td {
+    padding: var(--space-12) var(--space-16);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-data thead th {
+    background-color: var(--color-neutral-sand-200);
+    font-weight: var(--weight-semibold);
+    color: var(--color-neutral-coffee-600);
+}
+
+.table-data tbody tr:not(:first-child) {
+    border-top: 1px solid var(--color-neutral-sand-200);
+}
+
+.table-data tbody tr:hover {
+    background-color: var(--color-neutral-sand-50);
+}
+
+.cell-actions {
+    white-space: nowrap;
+}
+
+.link-action {
+    font-weight: var(--weight-medium);
+    color: var(--color-brand-indigo);
+}
+
+.link-action:hover {
+    color: var(--color-brand-wine);
+    text-decoration: underline;
+}
+
+.link-danger {
+    color: var(--color-brand-terracotta);
+}
+
+.empty-message {
+    padding: var(--space-32);
+    font-size: var(--font-size-14);
+    text-align: center;
+    color: var(--color-neutral-coffee-500);
+}
+
+/* ====== Formulários e leitura ====== */
+
+.form-group {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 480px;
+    margin-bottom: var(--space-24);
+}
+
+.form-group label {
+    font-size: var(--font-size-14);
+    font-weight: var(--weight-semibold);
+    color: var(--color-neutral-charcoal-700);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--space-12);
+    border: 1px solid var(--color-neutral-sand-300);
+    border-radius: 6px;
+    background-color: var(--color-neutral-white);
+    font-size: var(--font-size-16);
+    color: var(--color-neutral-charcoal-900);
+}
+
+.form-control:focus {
+    outline: 2px solid var(--color-brand-gold);
+    outline-offset: 1px;
+}
+
+.form-control.input-validation-error {
+    border-color: var(--color-brand-terracotta);
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--space-12);
+    margin-top: var(--space-24);
+}
+
+.text-danger,
+.field-validation-error {
+    font-size: var(--font-size-12);
+    color: var(--color-brand-terracotta);
+}
+
+.data-list {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: var(--space-8) var(--space-24);
+    max-width: 560px;
+    padding: var(--space-24);
+    background-color: var(--color-neutral-white);
+    border: 1px solid var(--color-neutral-sand-300);
+    border-radius: 6px;
+    font-size: var(--font-size-14);
+}
+
+.data-list dt {
+    font-weight: var(--weight-semibold);
+    color: var(--color-neutral-coffee-600);
+}
+
+.data-list dd {
+    margin: 0;
+    color: var(--color-neutral-charcoal-700);
+}
