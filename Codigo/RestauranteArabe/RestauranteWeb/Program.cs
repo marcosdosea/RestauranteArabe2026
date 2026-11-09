@@ -14,6 +14,7 @@ namespace RestauranteWeb
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IFormaPagamentoService, FormaPagamentoService>();
+            builder.Services.AddScoped<ITipoRestauranteService, TipoRestauranteService>();
             
             builder.Services.AddDbContext<RestauranteContext>(options =>
                 options.UseMySQL(builder.Configuration.GetConnectionString("RestauranteConnection") ?? throw new InvalidOperationException("Conexão com o banco de dados não foi possível. Favor entrar em contato com o Administrador.")));
