@@ -13,6 +13,8 @@ namespace RestauranteWeb
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IGrupoCardapioService, GrupoCardapioService>();
             builder.Services.AddScoped<IFormaPagamentoService, FormaPagamentoService>();
             builder.Services.AddScoped<ITipoRestauranteService, TipoRestauranteService>();
             

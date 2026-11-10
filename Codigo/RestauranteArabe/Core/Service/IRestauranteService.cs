@@ -1,4 +1,6 @@
-﻿namespace Core.Service
+﻿using System.Collections.Generic;
+
+namespace Core.Service
 {
     public interface IRestauranteService
     {
