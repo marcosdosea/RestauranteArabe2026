@@ -139,13 +139,21 @@ body {
     --color-neutral-white: #FFFFFF;
 }
 
-/* ============ Páginas de Cadastro ============ */
+/* ============ Páginas de Cadastro (CRUD) ============ */
 
 main {
     padding: var(--space-32);
 }
 
-.page-header {
+main p {
+    margin-bottom: var(--space-16);
+    font-size: var(--font-size-14);
+    color: var(--color-neutral-charcoal-700);
+}
+
+/* ====== Cabeçalho da página ====== */
+
+main > section {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -154,14 +162,13 @@ main {
     margin-bottom: var(--space-32);
 }
 
-.page-header h1 {
+main > section h1 {
     font-size: var(--font-size-28);
     color: var(--color-neutral-charcoal-900);
 }
 
-.page-subtitle {
-    margin-top: var(--space-4);
-    font-size: var(--font-size-14);
+main > section p {
+    margin: var(--space-4) 0 0;
     color: var(--color-neutral-coffee-500);
 }
 
@@ -170,7 +177,7 @@ main {
 .btn {
     display: inline-block;
     padding: var(--space-12) var(--space-24);
-    border: 1px solid transparent;
+    border: none;
     border-radius: 6px;
     font-size: var(--font-size-14);
     font-weight: var(--weight-semibold);
@@ -179,21 +186,21 @@ main {
 }
 
 .btn-primary {
-    background-color: var(--color-brand-wine);
+    background-color: var(--color-brand-gold);
     color: var(--color-neutral-sand-50);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-brand-wine-light);
+    background-color: var(--color-brand-gold-light);
 }
 
 .btn-secondary {
-    border-color: var(--color-neutral-coffee-400);
-    color: var(--color-neutral-coffee-600);
+    background-color: var(--color-brand-emerald);
+    color: var(--color-neutral-sand-50);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-neutral-sand-200);
+    background-color: var(--color-brand-emerald-light);
 }
 
 .btn-danger {
@@ -205,83 +212,86 @@ main {
     background-color: var(--color-brand-terracotta-light);
 }
 
-/* ====== Tabela de dados ====== */
-
-.table-responsive {
-    overflow-x: auto;
-    background-color: var(--color-neutral-white);
-    border: 1px solid var(--color-neutral-sand-300);
-    border-radius: 6px;
+.btn-outline {
+    border: 1px solid var(--color-neutral-coffee-400);
+    background-color: transparent;
+    color: var(--color-neutral-coffee-600);
 }
 
-.table-data {
+.btn-outline:hover {
+    background-color: var(--color-neutral-sand-200);
+}
+
+/* ====== Nav da página ====== */
+
+main nav {
+    display: flex;
+    gap: var(--space-12);
+    margin-top: var(--space-24);
+}
+
+/* ====== Tabela ====== */
+
+main table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-neutral-sand-300);
+    border-radius: 6px;
+    background-color: var(--color-neutral-white);
     font-size: var(--font-size-14);
 }
 
-.table-data th,
-.table-data td {
+main table th,
+main table td {
     padding: var(--space-12) var(--space-16);
     text-align: left;
     vertical-align: middle;
 }
 
-.table-data thead th {
+main table thead th {
+    border-bottom: 1px solid var(--color-neutral-sand-200);
     background-color: var(--color-neutral-sand-200);
     font-weight: var(--weight-semibold);
     color: var(--color-neutral-coffee-600);
 }
 
-.table-data tbody tr:not(:first-child) {
-    border-top: 1px solid var(--color-neutral-sand-200);
-}
-
-.table-data tbody tr:hover {
+main table tbody tr:hover {
     background-color: var(--color-neutral-sand-50);
 }
 
-.cell-actions {
-    white-space: nowrap;
-}
-
-.link-action {
-    font-weight: var(--weight-medium);
-    color: var(--color-brand-indigo);
-}
-
-.link-action:hover {
-    color: var(--color-brand-wine);
-    text-decoration: underline;
-}
-
-.link-danger {
-    color: var(--color-brand-terracotta);
-}
-
-.empty-message {
+main table td[colspan] {
     padding: var(--space-32);
-    font-size: var(--font-size-14);
     text-align: center;
     color: var(--color-neutral-coffee-500);
 }
 
-/* ====== Formulários e leitura ====== */
-
-.form-group {
-    display: grid;
-    gap: var(--space-4);
-    max-width: 480px;
-    margin-bottom: var(--space-24);
+main table a {
+    font-weight: var(--weight-medium);
+    color: var(--color-brand-indigo);
 }
 
-.form-group label {
+main table a:hover {
+    color: var(--color-brand-wine);
+    text-decoration: underline;
+}
+
+/* ====== Formulário ====== */
+
+main form {
+    max-width: 480px;
+}
+
+main form label {
+    display: block;
+    margin-bottom: var(--space-4);
     font-size: var(--font-size-14);
     font-weight: var(--weight-semibold);
     color: var(--color-neutral-charcoal-700);
 }
 
-.form-control {
+main form input {
     width: 100%;
     padding: var(--space-12);
     border: 1px solid var(--color-neutral-sand-300);
@@ -291,28 +301,35 @@ main {
     color: var(--color-neutral-charcoal-900);
 }
 
-.form-control:focus {
+main form input:focus {
     outline: 2px solid var(--color-brand-gold);
     outline-offset: 1px;
 }
 
-.form-control.input-validation-error {
+main form span {
+    display: block;
+    margin-top: var(--space-4);
+    font-size: var(--font-size-12);
+    color: var(--color-neutral-charcoal-700);
+}
+
+main form input.input-validation-error {
     border-color: var(--color-brand-terracotta);
 }
 
-.form-actions {
-    display: flex;
-    gap: var(--space-12);
-    margin-top: var(--space-24);
+main form .field-validation-error {
+    color: var(--color-brand-terracotta);
 }
 
-.text-danger,
-.field-validation-error {
+main form .validation-summary-errors {
+    margin-bottom: var(--space-16);
     font-size: var(--font-size-12);
     color: var(--color-brand-terracotta);
 }
 
-.data-list {
+/* ====== Details ====== */
+
+main dl {
     display: grid;
     grid-template-columns: 10rem 1fr;
     gap: var(--space-8) var(--space-24);
@@ -324,12 +341,12 @@ main {
     font-size: var(--font-size-14);
 }
 
-.data-list dt {
+main dt {
     font-weight: var(--weight-semibold);
     color: var(--color-neutral-coffee-600);
 }
 
-.data-list dd {
+main dd {
     margin: 0;
     color: var(--color-neutral-charcoal-700);
 }

@@ -4,47 +4,45 @@
     ViewData["Title"] = "Grupos do Cardápio";
 }
 
-<div class="page-header">
+<section>
     <div>
         <h1>Grupos do Cardápio</h1>
-        <p class="page-subtitle">Categorias que deixam o cardápio simples de navegar.</p>
+        <p>Categorias que deixam o cardápio simples de navegar.</p>
     </div>
-    <a asp-action="Create" class="btn btn-primary">+ Novo grupo</a>
-</div>
+    <a asp-action="Create" class="btn btn-secondary">+ Novo grupo</a>
+</section>
 
-<div class="table-responsive">
-    <table class="table-data">
-        <thead>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Ações</th>
+                <td colspan="3">Nenhum grupo cadastrado.</td>
             </tr>
-        </thead>
-        <tbody>
-            @if (!Model.Any())
+        }
+        else
+        {
+            @foreach (var grupoCardapio in Model)
             {
                 <tr>
-                    <td colspan="3" class="empty-message">Nenhum grupo cadastrado.</td>
+                    <td>@grupoCardapio.Id</td>
+                    <td>@grupoCardapio.Nome</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@grupoCardapio.Id">Detalhes</a>
+                        |
+                        <a asp-action="Edit" asp-route-id="@grupoCardapio.Id">Editar</a>
+                        |
+                        <a asp-action="Delete" asp-route-id="@grupoCardapio.Id">Excluir</a>
+                    </td>
                 </tr>
             }
-            else
-            {
-                @foreach (var grupoCardapio in Model)
-                {
-                    <tr>
-                        <td>@grupoCardapio.Id</td>
-                        <td>@grupoCardapio.Nome</td>
-                        <td class="cell-actions">
-                            <a asp-action="Details" asp-route-id="@grupoCardapio.Id" class="link-action">Detalhes</a>
-                            |
-                            <a asp-action="Edit" asp-route-id="@grupoCardapio.Id" class="link-action">Editar</a>
-                            |
-                            <a asp-action="Delete" asp-route-id="@grupoCardapio.Id" class="link-action link-danger">Excluir</a>
-                        </td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
-</div>
+        }
+    </tbody>
+</table>
