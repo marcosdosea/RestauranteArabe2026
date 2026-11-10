@@ -7,7 +7,7 @@ namespace Core.Service
         uint Create(Tipofuncionario tipoFuncionario);
         void Edit(Tipofuncionario tipoFuncionario);
         void Delete(uint id);
-        Tipofuncionario Get(uint id);
+        Tipofuncionario? Get(uint id);
         IEnumerable<Tipofuncionario> GetAll();
     }
 }
