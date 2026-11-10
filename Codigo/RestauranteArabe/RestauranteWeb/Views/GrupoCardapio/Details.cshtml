@@ -1,0 +1,21 @@
+@model RestauranteWeb.Models.GrupoCardapioViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do grupo";
+}
+
+<section>
+    <h1>Detalhes do grupo</h1>
+</section>
+
+<dl>
+    <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+    <dd>@Html.DisplayFor(model => model.Id)</dd>
+    <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+    <dd>@Html.DisplayFor(model => model.Nome)</dd>
+</dl>
+
+<nav>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-outline">Voltar</a>
+</nav>
