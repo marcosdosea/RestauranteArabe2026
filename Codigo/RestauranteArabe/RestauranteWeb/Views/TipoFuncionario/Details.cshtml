@@ -1,0 +1,37 @@
+@model RestauranteWeb.Models.TipoFuncionarioModel
+
+@{
+    ViewData["Title"] = "Detalhes Tipos de Funcionário";
+}
+
+<h1 class="mb-4">Detalhes Tipo de Funcionário</h1>
+
+<div class="card shadow-sm mb-4" style="max-width: 600px;">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">
+                ID
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+
+            <dt class="col-sm-3">
+                Nome
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="d-flex gap-2">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">
+        Editar
+    </a>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Voltar
+    </a>
+</div>
