@@ -4,10 +4,10 @@ namespace Core.Service
 {
     public interface ITipoFuncionario
     {
-        int Create(Tipofuncionario tipoFuncionario);
+        uint Create(Tipofuncionario tipoFuncionario);
         void Edit(Tipofuncionario tipoFuncionario);
-        void Delete(int id);
-        Tipofuncionario Get(int id);
+        void Delete(uint id);
+        Tipofuncionario Get(uint id);
         IEnumerable<Tipofuncionario> GetAll();
     }
 }
