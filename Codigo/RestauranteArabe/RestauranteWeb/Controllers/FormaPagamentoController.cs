@@ -22,6 +22,17 @@ public class FormaPagamentoController : Controller
         return View(formasPagamento);
     }
 
+    public IActionResult Details(uint? id)
+    {
+        if (id is null)
+        {
+            return NotFound();
+        }
+
+        var formaPagamento = _service.Get(id.Value);
+        return formaPagamento is null ? NotFound() : View(formaPagamento.ToViewModel());
+    }
+
     public IActionResult Create()
     {
         return View(new FormaPagamentoViewModel());
