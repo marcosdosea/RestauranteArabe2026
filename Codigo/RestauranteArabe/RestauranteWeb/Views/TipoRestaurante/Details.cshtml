@@ -1,0 +1,21 @@
+@model RestauranteWeb.Models.TipoRestauranteViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do tipo de restaurante";
+}
+
+<section>
+    <h1>Detalhes do tipo de restaurante</h1>
+</section>
+
+<dl>
+    <dt>ID</dt>
+    <dd>@Html.DisplayFor(model => model.Id)</dd>
+    <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+    <dd>@Html.DisplayFor(model => model.Nome)</dd>
+</dl>
+
+<nav>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-outline">Voltar</a>
+</nav>

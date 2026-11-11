@@ -22,6 +22,17 @@ public class TipoRestauranteController : Controller
         return View(tiposRestaurante);
     }
 
+    public IActionResult Details(uint? id)
+    {
+        if (id is null)
+        {
+            return NotFound();
+        }
+
+        var tipoRestaurante = _service.Get(id.Value);
+        return tipoRestaurante is null ? NotFound() : View(tipoRestaurante.ToViewModel());
+    }
+
     public IActionResult Create()
     {
         return View(new TipoRestauranteViewModel());
