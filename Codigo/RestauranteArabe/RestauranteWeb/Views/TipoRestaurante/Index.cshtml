@@ -1,37 +1,53 @@
 @model IEnumerable<RestauranteWeb.Models.TipoRestauranteViewModel>
 
 @{
-    ViewData["Title"] = "Tipos de restaurante";
+    ViewData["Title"] = "Tipos de Restaurante";
 }
 
-<h1>Tipos de restaurante</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">Novo tipo de restaurante</a>
-</p>
+<section>
+    <div>
+        <h1>Tipos de Restaurante</h1>
+        <p>Categorias que definem o estilo de cada restaurante.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-secondary">+ Novo tipo</a>
+</section>
 
 @if (TempData["Error"] is string error)
 {
-    <div class="alert alert-danger">@error</div>
+    <p role="alert"><strong>@error</strong></p>
 }
 
-<table class="table">
+<table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var tipoRestaurante in Model)
+        @if (!Model.Any())
         {
             <tr>
-                <td>@tipoRestaurante.Nome</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@tipoRestaurante.Id">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@tipoRestaurante.Id">Excluir</a>
-                </td>
+                <td colspan="3">Nenhum tipo de restaurante cadastrado.</td>
             </tr>
+        }
+        else
+        {
+            @foreach (var tipoRestaurante in Model)
+            {
+                <tr>
+                    <td>@tipoRestaurante.Id</td>
+                    <td>@tipoRestaurante.Nome</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@tipoRestaurante.Id">Detalhes</a>
+                        |
+                        <a asp-action="Edit" asp-route-id="@tipoRestaurante.Id">Editar</a>
+                        |
+                        <a asp-action="Delete" asp-route-id="@tipoRestaurante.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>
