@@ -1,37 +1,53 @@
 @model IEnumerable<RestauranteWeb.Models.FormaPagamentoViewModel>
 
 @{
-    ViewData["Title"] = "Formas de pagamento";
+    ViewData["Title"] = "Formas de Pagamento";
 }
 
-<h1>Formas de pagamento</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-primary">Nova forma de pagamento</a>
-</p>
+<section>
+    <div>
+        <h1>Formas de Pagamento</h1>
+        <p>Meios aceitos para pagar os atendimentos.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-secondary">+ Nova forma de pagamento</a>
+</section>
 
 @if (TempData["Error"] is string error)
 {
-    <div class="alert alert-danger">@error</div>
+    <p role="alert"><strong>@error</strong></p>
 }
 
-<table class="table">
+<table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var formaPagamento in Model)
+        @if (!Model.Any())
         {
             <tr>
-                <td>@formaPagamento.Nome</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@formaPagamento.Id">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@formaPagamento.Id">Excluir</a>
-                </td>
+                <td colspan="3">Nenhuma forma de pagamento cadastrada.</td>
             </tr>
+        }
+        else
+        {
+            @foreach (var formaPagamento in Model)
+            {
+                <tr>
+                    <td>@formaPagamento.Id</td>
+                    <td>@formaPagamento.Nome</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@formaPagamento.Id">Detalhes</a>
+                        |
+                        <a asp-action="Edit" asp-route-id="@formaPagamento.Id">Editar</a>
+                        |
+                        <a asp-action="Delete" asp-route-id="@formaPagamento.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>

@@ -1,0 +1,21 @@
+@model RestauranteWeb.Models.FormaPagamentoViewModel
+
+@{
+    ViewData["Title"] = "Detalhes da forma de pagamento";
+}
+
+<section>
+    <h1>Detalhes da forma de pagamento</h1>
+</section>
+
+<dl>
+    <dt>ID</dt>
+    <dd>@Html.DisplayFor(model => model.Id)</dd>
+    <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+    <dd>@Html.DisplayFor(model => model.Nome)</dd>
+</dl>
+
+<nav>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-outline">Voltar</a>
+</nav>
