@@ -1,0 +1,19 @@
+@model RestauranteWeb.Models.ItemCardapioViewModel
+
+@{
+    ViewData["Title"] = "Excluir item do cardápio";
+}
+
+<section>
+    <h1>Excluir item do cardápio</h1>
+</section>
+
+<p>Deseja excluir o item <strong>@Model.Nome</strong> do cardápio?</p>
+
+<form asp-action="Delete" method="post" class="d-flex gap-2">
+    <input type="hidden" asp-for="Id" />
+    <nav>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-action="Index" class="btn btn-outline">Cancelar</a>
+    </nav>
+</form>

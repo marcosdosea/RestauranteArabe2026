@@ -1,0 +1,54 @@
+@model IEnumerable<RestauranteWeb.Models.ItemCardapioViewModel>
+
+@{
+    ViewData["Title"] = "Itens do Cardápio";
+}
+
+<section>
+    <div>
+        <h1>Cardápio</h1>
+        <p>Itens do cardápio, preços e disponibilidade sempre organizados.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-secondary">+ Novo item</a>
+</section>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Grupo</th>
+            <th>Preço</th>
+            <th>Restaurante</th>
+            <th>Disponibilidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(!Model.Any())
+        {
+            <tr>
+                <td colspan="7">Nenhum item do cardápio cadastrado.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach(var itemCardapio in Model)
+            {
+                <tr>
+                    <td>@itemCardapio.Id</td>
+                    <td>@itemCardapio.Nome</td>
+                    <td>@itemCardapio.NomeGrupoCardapio</td>
+                    <td>@itemCardapio.Preco?.ToString("C2")</td>
+                    <td>@itemCardapio.NomeRestaurante</td>
+                    <td>@(itemCardapio.Ativo == 1 ? "Ativo" : "Inativo")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@itemCardapio.Id">Detalhes</a> |
+                        <a asp-action="Edit" asp-route-id="@itemCardapio.Id">Editar</a> |
+                        <a asp-action="Delete" asp-route-id="@itemCardapio.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -17,7 +17,7 @@ namespace Service
         /// Insere um novo tipo de funcionário na base de dados e retorna o ID do mesmo.
         /// </summary>
         /// <param name="tipoFuncionario"></param>
-        /// <returns></returns>
+        /// <returns>O id do tipo de funcionário criado</returns>
         public uint Create(Tipofuncionario tipoFuncionario)
         {
             context.Add(tipoFuncionario);
@@ -50,7 +50,7 @@ namespace Service
         }
         
         /// <summary>
-        /// Buscar um tipo de funcionário na base de dados
+        /// Busca um tipo de funcionário na base de dados
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
