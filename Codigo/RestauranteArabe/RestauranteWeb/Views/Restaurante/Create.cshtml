@@ -1,0 +1,21 @@
+@model RestauranteWeb.Models.RestauranteViewModel
+
+@{
+    ViewData["Title"] = "Novo restaurante";
+}
+
+<section>
+    <h1>Novo restaurante</h1>
+</section>
+
+<form asp-action="Create" method="post">
+    <partial name="_Campos" model="Model" />
+    <nav>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a asp-action="Index" class="btn btn-outline">Voltar</a>
+    </nav>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

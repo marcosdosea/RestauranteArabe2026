@@ -28,7 +28,7 @@ public class RestauranteService : IRestauranteService
 
     public void Delete(uint id)
     {
-        var restaurante = Get(id);
+        var restaurante = _context.Restaurantes.Find(id);
         if (restaurante is null)
         {
             return;
@@ -40,13 +40,17 @@ public class RestauranteService : IRestauranteService
 
     public Restaurante? Get(uint id)
     {
-        return _context.Restaurantes.Find(id);
+        return _context.Restaurantes
+            .AsNoTracking()
+            .Include(restaurante => restaurante.IdTipoRestauranteNavigation)
+            .FirstOrDefault(restaurante => restaurante.Id == id);
     }
 
     public IEnumerable<Restaurante> GetAll()
     {
         return _context.Restaurantes
             .AsNoTracking()
+            .Include(restaurante => restaurante.IdTipoRestauranteNavigation)
             .OrderBy(restaurante => restaurante.Nome)
             .ToList();
     }

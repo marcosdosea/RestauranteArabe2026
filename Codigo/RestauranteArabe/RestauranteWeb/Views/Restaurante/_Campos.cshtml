@@ -1,0 +1,55 @@
+@model RestauranteWeb.Models.RestauranteViewModel
+
+<div asp-validation-summary="ModelOnly"></div>
+<p>
+    <label asp-for="Nome"></label>
+    <input asp-for="Nome" maxlength="45" />
+    <span asp-validation-for="Nome"></span>
+</p>
+<p>
+    <label asp-for="Cnpj"></label>
+    <input asp-for="Cnpj" maxlength="14" inputmode="numeric" placeholder="Somente números" />
+    <span asp-validation-for="Cnpj"></span>
+</p>
+<p>
+    <label asp-for="IdTipoRestaurante"></label>
+    <select asp-for="IdTipoRestaurante" asp-items="ViewBag.TiposRestaurante">
+        <option value="0">Selecione...</option>
+    </select>
+    <span asp-validation-for="IdTipoRestaurante"></span>
+</p>
+<p>
+    <label asp-for="Telefone1"></label>
+    <input asp-for="Telefone1" maxlength="11" inputmode="numeric" placeholder="DDD + número" />
+    <span asp-validation-for="Telefone1"></span>
+</p>
+<p>
+    <label asp-for="Telefone2"></label>
+    <input asp-for="Telefone2" maxlength="11" inputmode="numeric" placeholder="DDD + número" />
+    <span asp-validation-for="Telefone2"></span>
+</p>
+<p>
+    <label asp-for="Cep"></label>
+    <input asp-for="Cep" maxlength="8" inputmode="numeric" placeholder="Somente números" />
+    <span asp-validation-for="Cep"></span>
+</p>
+<p>
+    <label asp-for="Rua"></label>
+    <input asp-for="Rua" maxlength="45" />
+    <span asp-validation-for="Rua"></span>
+</p>
+<p>
+    <label asp-for="Bairro"></label>
+    <input asp-for="Bairro" maxlength="45" />
+    <span asp-validation-for="Bairro"></span>
+</p>
+<p>
+    <label asp-for="Cidade"></label>
+    <input asp-for="Cidade" maxlength="45" />
+    <span asp-validation-for="Cidade"></span>
+</p>
+<p>
+    <label asp-for="Estado"></label>
+    <input asp-for="Estado" maxlength="2" placeholder="Ex.: SE" />
+    <span asp-validation-for="Estado"></span>
+</p>
