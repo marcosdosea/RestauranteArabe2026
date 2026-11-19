@@ -4,7 +4,7 @@ using RestauranteWeb.Models;
 
 namespace RestauranteWeb.Mappers
 {
-    public class TipoFuncionarioProfile
+    public class TipoFuncionarioMapper
     {
         public static TipoFuncionarioModel ToViewModel(Tipofuncionario tipoFuncionario)
         {

@@ -19,7 +19,7 @@ namespace RestauranteWeb.Controllers
         public ActionResult Index()
         {
             var listaTiposFuncionario = tipoFuncionarioService.GetAll();
-            var listaTiposFuncionarioModel = TipoFuncionarioProfile.ToViewModel(listaTiposFuncionario);
+            var listaTiposFuncionarioModel = TipoFuncionarioMapper.ToViewModel(listaTiposFuncionario);
             return View(listaTiposFuncionarioModel);
         }
 
@@ -27,7 +27,7 @@ namespace RestauranteWeb.Controllers
         public ActionResult Details(uint id)
         {
             Tipofuncionario tipoFuncionario = tipoFuncionarioService.Get(id);
-            TipoFuncionarioModel tipoFuncionarioModel = TipoFuncionarioProfile.ToViewModel(tipoFuncionario);
+            TipoFuncionarioModel tipoFuncionarioModel = TipoFuncionarioMapper.ToViewModel(tipoFuncionario);
             return View(tipoFuncionarioModel);
         }
 
@@ -45,7 +45,7 @@ namespace RestauranteWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                Tipofuncionario tipoFuncionario = TipoFuncionarioProfile.ToEntity(tipoFuncionarioModel);
+                Tipofuncionario tipoFuncionario = TipoFuncionarioMapper.ToEntity(tipoFuncionarioModel);
                 tipoFuncionarioService.Create(tipoFuncionario);          
             }
             return RedirectToAction(nameof(Index));
@@ -55,7 +55,7 @@ namespace RestauranteWeb.Controllers
         public ActionResult Edit(uint id)
         {
             var tipoFuncionario = tipoFuncionarioService.Get(id);
-            var tipoFuncionarioModel = TipoFuncionarioProfile.ToViewModel(tipoFuncionario);
+            var tipoFuncionarioModel = TipoFuncionarioMapper.ToViewModel(tipoFuncionario);
             return View(tipoFuncionarioModel);
         }
 
@@ -66,7 +66,7 @@ namespace RestauranteWeb.Controllers
         {      
             if (ModelState.IsValid)
             {
-                Tipofuncionario tipoFuncionario = TipoFuncionarioProfile.ToEntity(tipoFuncionarioModel);
+                Tipofuncionario tipoFuncionario = TipoFuncionarioMapper.ToEntity(tipoFuncionarioModel);
                 tipoFuncionarioService.Edit(tipoFuncionario);
             }
             return RedirectToAction(nameof(Index));
@@ -76,7 +76,7 @@ namespace RestauranteWeb.Controllers
         public ActionResult Delete(uint id)
         {
             var tipoFuncionario = tipoFuncionarioService.Get(id);
-            var tipoFuncionarioModel = TipoFuncionarioProfile.ToViewModel(tipoFuncionario);
+            var tipoFuncionarioModel = TipoFuncionarioMapper.ToViewModel(tipoFuncionario);
             return View(tipoFuncionarioModel);
         }
 

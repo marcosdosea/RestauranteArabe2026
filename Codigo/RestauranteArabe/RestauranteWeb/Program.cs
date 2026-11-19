@@ -19,11 +19,11 @@ namespace RestauranteWeb
             builder.Services.AddScoped<ITipoRestauranteService, TipoRestauranteService>();
             builder.Services.AddScoped<IRestauranteService, RestauranteService>();
             builder.Services.AddScoped<IFuncionarioService, FuncionarioService>();
-            
+            builder.Services.AddScoped<ITipoFuncionario, TipoFuncionarioService>();
+            builder.Services.AddScoped<IItemCardapioService, ItemCardapioService>();
+
             builder.Services.AddDbContext<RestauranteContext>(options =>
                 options.UseMySQL(builder.Configuration.GetConnectionString("RestauranteConnection") ?? throw new InvalidOperationException("Conexão com o banco de dados não foi possível. Favor entrar em contato com o Administrador.")));
-
-            builder.Services.AddTransient<ITipoFuncionario, TipoFuncionarioService>();
 
             var app = builder.Build();
 
