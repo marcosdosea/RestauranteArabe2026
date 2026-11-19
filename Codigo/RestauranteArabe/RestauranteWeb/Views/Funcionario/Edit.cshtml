@@ -1,0 +1,22 @@
+@model RestauranteWeb.Models.FuncionarioViewModel
+
+@{
+    ViewData["Title"] = "Editar funcionário";
+}
+
+<section>
+    <h1>Editar funcionário</h1>
+</section>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <partial name="_Campos" model="Model" />
+    <nav>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a asp-action="Index" class="btn btn-outline">Voltar</a>
+    </nav>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,41 @@
+@model RestauranteWeb.Models.FuncionarioViewModel
+
+@{
+    ViewData["Title"] = "Detalhes do funcionário";
+}
+
+<section>
+    <h1>Detalhes do funcionário</h1>
+</section>
+
+<dl>
+    <dt>ID</dt>
+    <dd>@Html.DisplayFor(model => model.Id)</dd>
+    <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+    <dd>@Html.DisplayFor(model => model.Nome)</dd>
+    <dt>@Html.DisplayNameFor(model => model.Cpf)</dt>
+    <dd>@Html.DisplayFor(model => model.Cpf)</dd>
+    <dt>@Html.DisplayNameFor(model => model.NomeTipoFuncionario)</dt>
+    <dd>@Html.DisplayFor(model => model.NomeTipoFuncionario)</dd>
+    <dt>@Html.DisplayNameFor(model => model.NomeRestaurante)</dt>
+    <dd>@Html.DisplayFor(model => model.NomeRestaurante)</dd>
+    <dt>@Html.DisplayNameFor(model => model.Telefone1)</dt>
+    <dd>@(Model.Telefone1 ?? "—")</dd>
+    <dt>@Html.DisplayNameFor(model => model.Telefone2)</dt>
+    <dd>@(Model.Telefone2 ?? "—")</dd>
+    <dt>@Html.DisplayNameFor(model => model.Cep)</dt>
+    <dd>@(Model.Cep ?? "—")</dd>
+    <dt>@Html.DisplayNameFor(model => model.Rua)</dt>
+    <dd>@(Model.Rua ?? "—")</dd>
+    <dt>@Html.DisplayNameFor(model => model.Bairro)</dt>
+    <dd>@(Model.Bairro ?? "—")</dd>
+    <dt>@Html.DisplayNameFor(model => model.Cidade)</dt>
+    <dd>@(Model.Cidade ?? "—")</dd>
+    <dt>@Html.DisplayNameFor(model => model.Estado)</dt>
+    <dd>@(Model.Estado ?? "—")</dd>
+</dl>
+
+<nav>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-outline">Voltar</a>
+</nav>
