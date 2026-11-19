@@ -291,7 +291,8 @@ main form label {
     color: var(--color-neutral-charcoal-700);
 }
 
-main form input {
+main form input,
+main form select {
     width: 100%;
     padding: var(--space-12);
     border: 1px solid var(--color-neutral-sand-300);
@@ -301,7 +302,8 @@ main form input {
     color: var(--color-neutral-charcoal-900);
 }
 
-main form input:focus {
+main form input:focus,
+main form select:focus {
     outline: 2px solid var(--color-brand-gold);
     outline-offset: 1px;
 }
@@ -313,7 +315,8 @@ main form span {
     color: var(--color-neutral-charcoal-700);
 }
 
-main form input.input-validation-error {
+main form input.input-validation-error,
+main form select.input-validation-error {
     border-color: var(--color-brand-terracotta);
 }
 

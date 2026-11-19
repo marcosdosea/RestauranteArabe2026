@@ -7,7 +7,7 @@ namespace Core.Service
         uint Create(Funcionario funcionario);
         void Edit(Funcionario funcionario);
         void Delete(uint id);
-        Funcionario Get(uint id);
+        Funcionario? Get(uint id);
         IEnumerable<Funcionario> GetAll();
         IEnumerable<Funcionario> GetByNome(string nome);
     }

@@ -1,0 +1,59 @@
+@model IEnumerable<RestauranteWeb.Models.FuncionarioViewModel>
+
+@{
+    ViewData["Title"] = "Funcionários";
+}
+
+<section>
+    <div>
+        <h1>Funcionários</h1>
+        <p>Equipe de cada restaurante e a função de cada um.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-secondary">+ Novo funcionário</a>
+</section>
+
+@if (TempData["Error"] is string error)
+{
+    <p role="alert"><strong>@error</strong></p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Função</th>
+            <th>Restaurante</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6">Nenhum funcionário cadastrado.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var funcionario in Model)
+            {
+                <tr>
+                    <td>@funcionario.Id</td>
+                    <td>@funcionario.Nome</td>
+                    <td>@funcionario.Cpf</td>
+                    <td>@funcionario.NomeTipoFuncionario</td>
+                    <td>@funcionario.NomeRestaurante</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@funcionario.Id">Detalhes</a>
+                        |
+                        <a asp-action="Edit" asp-route-id="@funcionario.Id">Editar</a>
+                        |
+                        <a asp-action="Delete" asp-route-id="@funcionario.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
