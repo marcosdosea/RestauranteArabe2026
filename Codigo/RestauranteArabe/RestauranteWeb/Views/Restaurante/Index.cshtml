@@ -1,0 +1,59 @@
+@model IEnumerable<RestauranteWeb.Models.RestauranteViewModel>
+
+@{
+    ViewData["Title"] = "Restaurantes";
+}
+
+<section>
+    <div>
+        <h1>Restaurantes</h1>
+        <p>Restaurantes que utilizam a plataforma.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-secondary">+ Novo restaurante</a>
+</section>
+
+@if (TempData["Error"] is string error)
+{
+    <p role="alert"><strong>@error</strong></p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Tipo</th>
+            <th>Cidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6">Nenhum restaurante cadastrado.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var restaurante in Model)
+            {
+                <tr>
+                    <td>@restaurante.Id</td>
+                    <td>@restaurante.Nome</td>
+                    <td>@restaurante.Cnpj</td>
+                    <td>@restaurante.NomeTipoRestaurante</td>
+                    <td>@(restaurante.Cidade ?? "—")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@restaurante.Id">Detalhes</a>
+                        |
+                        <a asp-action="Edit" asp-route-id="@restaurante.Id">Editar</a>
+                        |
+                        <a asp-action="Delete" asp-route-id="@restaurante.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
