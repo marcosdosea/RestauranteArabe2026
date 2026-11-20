@@ -6,8 +6,8 @@ namespace Core.Service
     {
         uint Create(Mesa mesa);
         void Edit(Mesa mesa);
-        void Delete(int id);
-        Mesa Get(int id);
+        void Delete(uint id);
+        Mesa? Get(uint id);
         IEnumerable<Mesa> GetAll();
     }
 }

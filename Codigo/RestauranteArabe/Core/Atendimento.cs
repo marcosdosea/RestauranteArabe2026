@@ -27,7 +27,7 @@ public partial class Atendimento
 
     public decimal Total { get; set; }
 
-    public int IdMesa { get; set; }
+    public uint IdMesa { get; set; }
 
     public virtual Mesa IdMesaNavigation { get; set; } = null!;
 

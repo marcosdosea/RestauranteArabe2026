@@ -26,6 +26,8 @@ public class GrupoCardapioController : Controller
     public ActionResult Details(uint id)
     {
         var grupoCardapio = grupoCardapioService.Get(id);
+        if(grupoCardapio == null) 
+            return NotFound();
         var grupoCardapioViewModel = GrupoCardapioMapper.ToViewModel(grupoCardapio);
         return View(grupoCardapioViewModel);
     }
@@ -54,6 +56,8 @@ public class GrupoCardapioController : Controller
     public ActionResult Edit(uint id)
     {
         var grupoCardapio = grupoCardapioService.Get(id);
+        if(grupoCardapio == null) 
+            return NotFound();
         var grupoCardapioViewModel = GrupoCardapioMapper.ToViewModel(grupoCardapio);
         return View(grupoCardapioViewModel);
     }
@@ -75,6 +79,8 @@ public class GrupoCardapioController : Controller
     public ActionResult Delete(uint id)
     {
         var grupoCardapio = grupoCardapioService.Get(id);
+        if(grupoCardapio == null) 
+            return NotFound();
         var grupoCardapioViewModel = GrupoCardapioMapper.ToViewModel(grupoCardapio);
         return View(grupoCardapioViewModel);
     }

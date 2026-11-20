@@ -1,0 +1,50 @@
+@model IEnumerable<RestauranteWeb.Models.MesaViewModel>
+
+@{
+    ViewData["Title"] = "Mesas";
+}
+
+<section>
+    <div>
+        <h1>Mesas</h1>
+        <p>Mesas que serão gerenciadas pelo restaurante.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-secondary">+ Nova mesa</a>
+</section>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Identificação</th>
+            <th>Restaurante</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="4">Nenhuma mesa cadastrada.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var mesa in Model)
+            {
+                <tr>
+                    <td>@mesa.Id</td>
+                    <td>@mesa.Identificacao</td>
+                    <td>@mesa.NomeRestaurante</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@mesa.Id">Detalhes</a>
+                        |
+                        <a asp-action="Edit" asp-route-id="@mesa.Id">Editar</a>
+                        |
+                        <a asp-action="Delete" asp-route-id="@mesa.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

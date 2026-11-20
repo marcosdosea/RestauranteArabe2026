@@ -1,0 +1,19 @@
+@model RestauranteWeb.Models.MesaViewModel
+
+@{
+    ViewData["Title"] = "Excluir mesa";
+}
+
+<section>
+    <h1>Excluir mesa</h1>
+</section>
+
+<p>Deseja excluir a mesa <strong>@Model.Identificacao</strong>?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <nav>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-action="Index" class="btn btn-outline">Cancelar</a>
+    </nav>
+</form>

@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="@Url.Action("Index", "Mesa")">
                         <img src="~/img/grid-icon.svg" alt="" width="20" height="20">
                         <span>Mesas</span>
                     </a>
@@ -65,10 +65,10 @@
                         <span>Cadastros</span>
                     </a>
                     <ul id="submenu-cadastros" class="collapse">
-                        <li><a asp-controller="FormaPagamento" asp-action="Index">Formas de Pagamento</a></li>
-                        <li><a asp-controller="TipoRestaurante" asp-action="Index">Tipos de Restaurante</a></li>
-                        <li><a asp-controller="TipoFuncionario" asp-action="Index">Tipos de Funcionário</a></li>
-                        <li><a asp-controller="GrupoCardapio" asp-action="Index">Grupos do Cardápio</a></li>
+                        <li><a href="@Url.Action("Index", "FormaPagamento")">Formas de Pagamento</a></li>
+                        <li><a href="@Url.Action("Index", "TipoRestaurante")">Tipos de Restaurante</a></li>
+                        <li><a href="@Url.Action("Index", "TipoFuncionario")">Tipos de Funcionário</a></li>
+                        <li><a href="@Url.Action("Index", "GrupoCardapio")">Grupos do Cardápio</a></li>
                     </ul>
                 </li>
             </ul>
