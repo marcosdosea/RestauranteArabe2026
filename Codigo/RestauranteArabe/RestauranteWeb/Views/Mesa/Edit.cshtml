@@ -1,0 +1,34 @@
+@model RestauranteWeb.Models.MesaViewModel
+
+@{
+    ViewData["Title"] = "Editar mesa";
+}
+
+<section>
+    <h1>Editar mesa</h1>
+</section>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly"></div>
+    <p>
+        <label asp-for="Identificacao"></label>
+        <input asp-for="Identificacao" maxlength="45" />
+        <span asp-validation-for="Identificacao"></span>
+    </p>
+    <p>
+        <label asp-for="IdRestaurante"></label>
+        <select asp-for="IdRestaurante" asp-items="ViewBag.Restaurantes">
+            <option value="0">Selecione...</option>
+        </select>
+        <span asp-validation-for="IdRestaurante"></span>
+    </p>
+    <nav>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a asp-action="Index" class="btn btn-outline">Voltar</a>
+    </nav>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
